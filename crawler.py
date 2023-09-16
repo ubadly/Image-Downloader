@@ -351,7 +351,6 @@ def crawl_image_urls(keywords, engine="Edge", max_number=10000,
 
     if browser != "api":
         browser = str.lower(browser)
-        chrome_path = "./msedgedriver.exe"
         chrome_options = webdriver.EdgeOptions()
         if "headless" in browser:
             chrome_options.add_argument("headless")

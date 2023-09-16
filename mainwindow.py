@@ -97,7 +97,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         """ Engine """
         if self.radioButton_google.isChecked():
-            config.engine = "Google"
+            config.engine = "Edge"
         elif self.radioButton_bing.isChecked():
             config.engine = "Bing"
         elif self.radioButton_baidu.isChecked():
@@ -107,7 +107,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if self.radioButton_chrome_headless.isChecked():
             config.driver = "chrome_headless"
         elif self.radioButton_chrome.isChecked():
-            config.driver = "chrome"
+            config.driver = "edge"
         elif self.radioButton_api.isChecked():
             config.driver = "api"
 

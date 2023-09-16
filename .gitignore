@@ -6,3 +6,5 @@ images
 download_images
 build
 dist
+
+.venv

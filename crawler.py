@@ -82,7 +82,7 @@ def google_image_url_from_webpage(driver, max_number, quiet=False):
                 break
             thumb_elements_old = thumb_elements
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            time.sleep(2)
+            time.sleep(12)
             show_more = driver.find_elements(By.CLASS_NAME, "mye4qd")
             if len(show_more) == 1 and show_more[0].is_displayed() and show_more[0].is_enabled():
                 my_print("Click show_more button.", quiet)

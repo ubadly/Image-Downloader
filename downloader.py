@@ -85,4 +85,4 @@ def download_images(image_urls, dst_dir, file_prefix="img", concurrency=50, time
             future_list.append(executor.submit(
                 download_image, image_url, dst_dir, file_name, timeout, proxy_type, proxy))
             count += 1
-        concurrent.futures.wait(future_list, timeout=180)
+        concurrent.futures.wait(future_list, timeout=90)

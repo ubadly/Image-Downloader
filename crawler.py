@@ -17,6 +17,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import requests
 from concurrent import futures
+from retrying import retry
 
 
 
@@ -227,7 +228,7 @@ def baidu_image_url_from_webpage(driver):
         image_urls.append(image_url)
     return image_urls
 
-
+@retry
 def baidu_get_image_url_using_api(keywords, max_number=10000, face_only=False,
                                   proxy=None, proxy_type=None):
     def decode_url(url):
@@ -247,7 +248,7 @@ def baidu_get_image_url_using_api(keywords, max_number=10000, face_only=False,
     query_url += "&face={}".format(1 if face_only else 0)
 
     init_url = query_url + "&pn=0&rn=30"
-
+    my_print("请求链接：{}".format(init_url))
     proxies = None
     if proxy and proxy_type:
         proxies = {"http": "{}://{}".format(proxy_type, proxy),
